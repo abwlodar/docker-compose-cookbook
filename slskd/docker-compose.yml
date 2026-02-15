@@ -1,0 +1,20 @@
+services:
+  slskd:
+    image: slskd/slskd
+    container_name: slskd
+    restart: always
+    env_file: .env
+    environment:
+      - SLSKD_REMOTE_CONFIGURATION=true
+    volumes:
+      - ./slskd-appdata:/app
+      - /data/media/:/data/media/
+    ports:
+      - 5030:5030
+      - 5031:5031
+      - 50300:50300
+
+networks:
+  default:
+    name: $DOCKER_MY_NETWORK
+    external: true

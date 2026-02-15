@@ -1,0 +1,12 @@
+# ignore everything
+*
+
+# allow directory traversal
+!*/
+
+# track these files
+!.gitignore
+!**/*.yml
+!**/.env.example
+!**/Caddyfile
+!README.md

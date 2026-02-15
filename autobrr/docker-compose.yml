@@ -1,0 +1,15 @@
+services:
+  autobrr:
+    image: ghcr.io/autobrr/autobrr:latest
+    container_name: autobrr
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ./autobrr_config:/config
+    ports:
+      - 7474:7474
+
+networks:
+  default:
+    name: $DOCKER_MY_NETWORK
+    external: true

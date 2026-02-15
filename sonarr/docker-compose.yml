@@ -1,0 +1,14 @@
+services:
+  sonarr:
+    image: lscr.io/linuxserver/sonarr:develop
+    container_name: sonarr
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ./sonarr-config:/config
+      - /data/media:/data/media
+
+networks:
+  default:
+    name: $DOCKER_MY_NETWORK
+    external: true

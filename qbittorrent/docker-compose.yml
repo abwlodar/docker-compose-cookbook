@@ -1,0 +1,20 @@
+services:
+  qbittorrent:
+    image: lscr.io/linuxserver/qbittorrent
+    container_name: qbittorrent
+    hostname: qbittorrent
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ./qbittorrent-config:/config
+      - /data/media/dl:/data/media/dl
+      - /data/tmp/dl:/data/tmp/dl
+    ports:
+      - 6881:6881
+      - 6881:6881/udp
+      - 8080:8080
+
+networks:
+  default:
+    name: $DOCKER_MY_NETWORK
+    external: true

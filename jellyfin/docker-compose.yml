@@ -1,0 +1,19 @@
+services:
+  jellyfin:
+    image: lscr.io/linuxserver/jellyfin:latest
+    container_name: jellyfin
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ./jellyfin-config:/config
+      - /data/media:/data/media
+    devices:
+      - /dev/dri:/dev/dri
+      - /dev/fb0:/dev/fb0
+    ports:
+      - 8096:8096
+
+networks:
+  default:
+    name: $DOCKER_MY_NETWORK
+    external: true

@@ -1,0 +1,14 @@
+services:
+  dash:
+    image: mauricenino/dashdot:latest
+    container_name: dashdot
+    restart: unless-stopped
+    privileged: true
+    env_file: .env
+    volumes:
+      - /:/mnt/host:ro
+
+networks:
+  default:
+    name: $DOCKER_MY_NETWORK
+    external: true

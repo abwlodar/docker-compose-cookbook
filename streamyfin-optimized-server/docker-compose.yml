@@ -1,0 +1,15 @@
+services:
+  app:
+    image: fredrikburmester/streamyfin-optimized-versions-server:master
+    container_name: streamyfin-optimized
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - NODE_ENV=development
+    ports:
+      - "3000:3000"
+
+networks:
+  default:
+    name: $DOCKER_MY_NETWORK
+    external: true

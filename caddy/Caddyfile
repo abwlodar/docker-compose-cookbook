@@ -1,0 +1,60 @@
+{
+    acme_dns cloudflare {$CLOUDFLARE_API_TOKEN}
+}
+
+files.{$DOMAIN} {
+    root * /mnt/data
+    basic_auth /* {
+        {$CADDY_BASIC_AUTH_USER} {$CADDY_BASIC_AUTH_HASH}
+    }
+    encode gzip
+    file_server /* browse
+}
+
+tv.{$DOMAIN} {
+    reverse_proxy jellyfin:8096
+}
+
+sonarr.{$DOMAIN} {
+    reverse_proxy sonarr:8989
+}
+
+qb.{$DOMAIN} {
+    reverse_proxy qbittorrent:8080
+}
+
+prowlarr.{$DOMAIN} {
+    reverse_proxy prowlarr:9696
+}
+
+immich.{$DOMAIN} {
+    reverse_proxy immich_server:2283
+}
+
+radarr.{$DOMAIN} {
+    reverse_proxy radarr:7878
+}
+
+tubearchivist.{$DOMAIN} {
+    reverse_proxy tubearchivist:8000
+}
+
+kopia.{$DOMAIN} {
+    reverse_proxy kopia:51515
+}
+
+backrest.{$DOMAIN} {
+    reverse_proxy backrest:9898
+}
+
+medichaser.{$DOMAIN} {
+    reverse_proxy medichaser:7681
+}
+
+homebox.{$DOMAIN} {
+    reverse_proxy homebox:7745
+}
+
+{$DOMAIN} {
+    reverse_proxy homarr:7575
+}

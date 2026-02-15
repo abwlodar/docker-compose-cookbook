@@ -1,0 +1,16 @@
+services:
+  radarr:
+    image: lscr.io/linuxserver/radarr:latest
+    container_name: radarr
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ./radarr-config:/config
+      - /data/media:/data/media
+    ports:
+      - 7878:7878
+
+networks:
+  default:
+    name: $DOCKER_MY_NETWORK
+    external: true

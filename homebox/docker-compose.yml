@@ -1,0 +1,20 @@
+services:
+  homebox:
+    image: ghcr.io/hay-kot/homebox:latest
+    container_name: homebox
+    restart: always
+    env_file: .env
+    environment:
+      - HBOX_LOG_LEVEL=info
+      - HBOX_LOG_FORMAT=text
+      - HBOX_WEB_MAX_UPLOAD_SIZE=10
+      - HBOX_OPTIONS_ALLOW_REGISTRATION
+    volumes:
+      - ./homebox-data:/data/
+    ports:
+      - 7745:7745
+
+networks:
+  default:
+    name: $DOCKER_MY_NETWORK
+    external: true

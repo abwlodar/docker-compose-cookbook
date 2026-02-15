@@ -1,0 +1,13 @@
+services:
+  recyclarr:
+    image: ghcr.io/recyclarr/recyclarr
+    container_name: recyclarr
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ./recyclarr-config:/config
+
+networks:
+  default:
+    name: $DOCKER_MY_NETWORK
+    external: true

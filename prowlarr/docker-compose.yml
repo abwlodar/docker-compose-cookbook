@@ -1,0 +1,15 @@
+services:
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:latest
+    container_name: prowlarr
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ./prowlarr-config:/config
+    ports:
+      - 9696:9696
+
+networks:
+  default:
+    name: $DOCKER_MY_NETWORK
+    external: true
