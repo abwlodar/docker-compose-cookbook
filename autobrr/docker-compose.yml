@@ -6,8 +6,8 @@ services:
     env_file: .env
     volumes:
       - ./autobrr_config:/config
-    ports:
-      - 7474:7474
+    expose:
+      - "7474"
 
 networks:
   default:

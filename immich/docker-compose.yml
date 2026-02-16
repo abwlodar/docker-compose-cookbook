@@ -13,8 +13,8 @@ services:
       - ${UPLOAD_LOCATION}/upload:/data/upload
       - ${UPLOAD_LOCATION}/library:/data/library
       - /etc/localtime:/etc/localtime:ro
-    ports:
-      - "2283:2283"
+    expose:
+      - "2283"
     depends_on:
       - redis
       - database

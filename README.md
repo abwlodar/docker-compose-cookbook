@@ -44,6 +44,16 @@ create the shared network before starting any services:
 docker network create caddy
 ```
 
+## ports
+
+webui ports are internal-only (`expose`), accessible only within the docker network for caddy to proxy. only external-facing ports are published:
+
+- **caddy**: 80, 443 (entry point)
+- **qbittorrent**: 6881 (torrent peer connections)
+- **slskd**: 50300 (soulseek listen port)
+
+everything else stays inside the network.
+
 ## notes
 
 - caddy uses `{$VAR}` syntax in the caddyfile to load the domain and secrets from its `.env`

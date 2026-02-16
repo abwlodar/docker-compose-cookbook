@@ -11,8 +11,8 @@ services:
       - HBOX_OPTIONS_ALLOW_REGISTRATION
     volumes:
       - ./homebox-data:/data/
-    ports:
-      - 7745:7745
+    expose:
+      - "7745"
 
 networks:
   default:

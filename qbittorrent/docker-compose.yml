@@ -9,10 +9,11 @@ services:
       - ./qbittorrent-config:/config
       - /data/media/dl:/data/media/dl
       - /data/tmp/dl:/data/tmp/dl
+    expose:
+      - "8080"
     ports:
       - 6881:6881
       - 6881:6881/udp
-      - 8080:8080
 
 networks:
   default:

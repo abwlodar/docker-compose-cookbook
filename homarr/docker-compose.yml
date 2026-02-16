@@ -9,8 +9,8 @@ services:
     volumes:
       - /run/user/1000/docker.sock:/var/run/docker.sock
       - ./homarr/appdata:/appdata
-    ports:
-      - "7575:7575"
+    expose:
+      - "7575"
 
 networks:
   default:

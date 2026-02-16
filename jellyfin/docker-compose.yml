@@ -10,8 +10,8 @@ services:
     devices:
       - /dev/dri:/dev/dri
       - /dev/fb0:/dev/fb0
-    ports:
-      - 8096:8096
+    expose:
+      - "8096"
 
 networks:
   default:

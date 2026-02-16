@@ -7,8 +7,8 @@ services:
     volumes:
       - ./radarr-config:/config
       - /data/media:/data/media
-    ports:
-      - 7878:7878
+    expose:
+      - "7878"
 
 networks:
   default:
