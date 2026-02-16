@@ -55,6 +55,10 @@ homebox.{$DOMAIN} {
     reverse_proxy homebox:7745
 }
 
+qbitwebui.{$DOMAIN} {
+    reverse_proxy qbitwebui:3000
+}
+
 {$DOMAIN} {
     reverse_proxy homarr:7575
 }

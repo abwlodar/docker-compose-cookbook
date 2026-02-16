@@ -27,6 +27,7 @@ all services share a single external docker network (configured via `DOCKER_MY_N
 | immich | photo management |
 | jellyfin | media server |
 | prowlarr | indexer manager |
+| qbitwebui | qbittorrent web interface |
 | qbittorrent | torrent client |
 | radarr | movie management |
 | rarbg | rarbg selfhosted |

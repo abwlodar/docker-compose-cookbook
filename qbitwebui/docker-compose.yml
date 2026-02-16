@@ -1,0 +1,17 @@
+services:
+  qbitwebui:
+    image: ghcr.io/maciejonos/qbitwebui:latest
+    container_name: qbitwebui
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - ENCRYPTION_KEY=${QBITWEBUI_ENCRYPTION_KEY}
+    volumes:
+      - ./data:/data
+    expose:
+      - "3000"
+
+networks:
+  default:
+    name: $DOCKER_MY_NETWORK
+    external: true
