@@ -7,11 +7,11 @@ services:
     restart: always
     env_file: .env
     volumes:
-      - ${UPLOAD_LOCATION}:/data
-      - ${THUMB_LOCATION}:/data/thumbs
-      - ${ENCODED_VIDEO_LOCATION}:/data/encoded-video
-      - ${PROFILE_LOCATION}:/data/profile
-      - ${BACKUP_LOCATION}:/data/backups
+      # All Immich internal data (thumbs, encoded-video, profile, backups) goes to /data/immich
+      - ${IMMICH_DATA_LOCATION}:/data
+      # Only actual photos are mounted to the browseable photos folder
+      - ${UPLOAD_LOCATION}/upload:/data/upload
+      - ${UPLOAD_LOCATION}/library:/data/library
       - /etc/localtime:/etc/localtime:ro
     ports:
       - "2283:2283"
@@ -53,6 +53,7 @@ services:
 
 volumes:
   model-cache:
+
 
 networks:
   default:
