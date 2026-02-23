@@ -22,6 +22,7 @@ all services share a single external docker network (configured via `DOCKER_MY_N
 | caddy | reverse proxy + tls |
 | cloudflared | cloudflare tunnel |
 | dashdot | server dashboard |
+| firefly | personal finance manager |
 | homarr | home page |
 | homebox | inventory management |
 | immich | photo management |

@@ -59,6 +59,14 @@ qbitwebui.{$DOMAIN} {
     reverse_proxy qbitwebui:3000
 }
 
+firefly.{$DOMAIN} {
+    reverse_proxy firefly:8080
+}
+
+firefly-importer.{$DOMAIN} {
+    reverse_proxy firefly-importer:8080
+}
+
 {$DOMAIN} {
     reverse_proxy homarr:7575
 }

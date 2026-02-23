@@ -9,4 +9,5 @@
 !**/*.yml
 !**/.env.example
 !**/Caddyfile
+!*.sh
 !README.md
