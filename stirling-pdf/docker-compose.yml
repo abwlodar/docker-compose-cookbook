@@ -1,0 +1,18 @@
+services:
+  stirling-pdf:
+    image: stirlingtools/stirling-pdf:latest
+    container_name: stirling-pdf
+    env_file: .env
+    expose:
+      - "8080"
+    volumes:
+      - ./stirling-pdf-data/tessdata:/usr/share/tessdata
+      - ./stirling-pdf-data/configs:/configs
+      - ./stirling-pdf-data/logs:/logs
+      - ./stirling-pdf-data/pipeline:/pipeline
+    restart: unless-stopped
+
+networks:
+  default:
+    name: $DOCKER_MY_NETWORK
+    external: true

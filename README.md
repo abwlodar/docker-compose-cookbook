@@ -35,6 +35,7 @@ all services share a single external docker network (configured via `DOCKER_MY_N
 | recyclarr | trash guides sync |
 | slskd | soulseek client |
 | sonarr | tv management |
+| stirling-pdf | pdf tools |
 | streamyfin-optimized-server | streamyfin transcoding |
 | tubearchivist | youtube archiver |
 

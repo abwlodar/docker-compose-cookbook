@@ -2,12 +2,15 @@ services:
   qbitwebui:
     image: ghcr.io/maciejonos/qbitwebui:latest
     container_name: qbitwebui
+    hostname: qbitwebui
     restart: unless-stopped
     env_file: .env
     environment:
       - ENCRYPTION_KEY=${QBITWEBUI_ENCRYPTION_KEY}
+      - DOWNLOADS_PATH=/downloads
     volumes:
       - ./data:/data
+      - /data/media/dl:/downloads:ro
     expose:
       - "3000"
 
